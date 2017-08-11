@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Register" />
-        <activity android:name=".configTime"></activity>
+        <activity android:name=".configTime" />
+        <activity android:name=".SplashScreen"></activity>
     </application>
 
 </manifest>

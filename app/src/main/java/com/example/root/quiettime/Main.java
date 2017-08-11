@@ -8,6 +8,7 @@ import java.security.NoSuchAlgorithmException;
 class Main extends User{
 
     MessageDigest md;
+    String username;
 
     protected String hash(String input) {
 
@@ -41,6 +42,11 @@ class Main extends User{
         return false;
     }
 
+    //keep track of current user for all children of main class
+    protected void currentUser(String currentUser){
+        this.username = currentUser;
+    }
+
     protected void updateUser(User userUpdate) {
         if(userUpdate == null){
             Log.v("QT", "ERROR: Userfile not found!");
@@ -57,5 +63,7 @@ class Main extends User{
         user.pw = password;
         storeUser(user);
     }
+
+    //storeQTdata
 
 }

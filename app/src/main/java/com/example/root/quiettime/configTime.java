@@ -1,19 +1,51 @@
 package com.example.root.quiettime;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
-public class configTime extends AppCompatActivity {
+import java.util.Calendar;
+
+public class configTime extends Main {
+
+    TimePicker tp;
+    int currentMin, currentHour;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_config_time);
+        tp = (TimePicker) findViewById(R.id.timePicker);
     }
 
+    /*
+    Save current ringtone and change to something that is not jarring ***************
+     (change back after)
+    */
+    protected boolean sameHour (int endHour) {
+        currentHour = Calendar.HOUR_OF_DAY;
+
+        if(currentHour < endHour)
+            return sameHour(endHour);
+
+        return true;
+    }
+
+    protected boolean threeMinWarn(int endMin){
+        currentMin = Calendar.MINUTE;
+
+        if(currentMin < endMin)
+            return threeMinWarn(endMin);
+        if(currentMin >= endMin)
+            return true;
+        return threeMinWarn(endMin);
+    }
     public void onStartTap(View v) {
-        Toast.makeText(getApplicationContext(), "Start", Toast.LENGTH_LONG).show();
+        if(sameHour(tp.getHour()))
+            if(threeMinWarn(tp.getMinute())){
+
+            }
+
     }
 }
