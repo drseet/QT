@@ -1,5 +1,6 @@
 package com.example.root.quiettime;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -18,27 +19,25 @@ public class Register extends Main {
     }
 
     public void onCreateTap(View v) {
-        String username = new String();
+        String username = usr.getText().toString();
+        String password = pass.getText().toString();
+        String password2 = pass2.getText().toString();
 
-        if(usr != null)
-            username = usr.getText().toString();
-        else
-            Toast.makeText(getApplicationContext(), "Enter a username!", Toast.LENGTH_LONG).show();
-
-        if(pass == null || pass2 == null){
+        if(password == null)
             createUser(username, "");
-            Toast.makeText(getApplicationContext(), "User created", Toast.LENGTH_LONG).show();
-
-        }
-        else if(pass.getText().toString() == pass2.getText().toString()) {
+        else
+            if(!password.equals(password2))
+                Toast.makeText(getApplicationContext(),
+                        "Passwords don't match!", Toast.LENGTH_LONG).show();
+        if(password.equals(password2)) {
             if (userFound(username))
-                Toast.makeText(getApplicationContext(), "User already exists!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),
+                        "Username taken! Try Again", Toast.LENGTH_LONG).show();
             else {
-                createUser(username, pass.getText().toString());
-                Toast.makeText(getApplicationContext(), "User created", Toast.LENGTH_LONG).show();
-
+                createUser(username, password);
+                Intent login = new Intent(Register.this, Login.class);
+                startActivity(login);
             }
-        Toast.makeText(getApplicationContext(), pass + " / " + pass2, Toast.LENGTH_LONG).show();
         }
     }
 }
