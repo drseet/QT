@@ -27,11 +27,10 @@ public class Login extends Main {
             Intent start = new Intent(Login.this, Main.class);
             startActivity(start);
         }
-        else{
-            Toast.makeText(getApplicationContext(),"User not found, please register", Toast.LENGTH_LONG).show();
-            //Intent reg = new Intent(Login.this, Register.class);
-            //startActivity(reg);
-        }
+        else
+            Toast.makeText(getApplicationContext(),
+                    "User not found, please register", Toast.LENGTH_LONG).show();
+
     }
 
     public void onStartTap(View v) {
