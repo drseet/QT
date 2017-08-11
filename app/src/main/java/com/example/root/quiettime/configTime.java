@@ -1,5 +1,6 @@
 package com.example.root.quiettime;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TimePicker;
@@ -42,10 +43,7 @@ public class configTime extends Main {
         return threeMinWarn(endMin);
     }
     public void onStartTap(View v) {
-        if(sameHour(tp.getHour()))
-            if(threeMinWarn(tp.getMinute())){
-
-            }
-
+        Intent splash = new Intent(configTime.this, SplashScreen.class);
+        startActivity(splash);
     }
 }

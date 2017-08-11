@@ -1,0 +1,12 @@
+package com.example.root.quiettime;
+
+import android.os.Bundle;
+
+public class Warn extends SplashScreen {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_warn);
+    }
+}
