@@ -2,7 +2,6 @@ package com.example.root.quiettime;
 
 
 import android.util.Log;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 

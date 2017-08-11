@@ -24,7 +24,8 @@ public class Login extends Main {
         String password = pass.getText().toString();
 
         if(credsMatch(username, password)){
-            Intent start = new Intent(Login.this, Main.class);
+            //if username = "admin" && password == "admin" adminMenu intent start else:
+            Intent start = new Intent(Login.this, configTime.class);
             startActivity(start);
         }
         else
