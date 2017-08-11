@@ -63,5 +63,8 @@ class StorageUtil extends AppCompatActivity implements java.io.Serializable{
         else
             return false;
     }
+    protected void deleteUser(String username) {
+
+    }
 
 }

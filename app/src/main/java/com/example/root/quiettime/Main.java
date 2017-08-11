@@ -42,14 +42,16 @@ class Main extends User{
         return false;
     }
 
-    //add updateUser method
+    //add updateUser method and delete user
+    protected void deleteUser(String username) {
+
+    }
 
     protected void createUser(String username, String password) {
         User user = new User();
         user.name = username;
         user.pw = password;
         storeUser(user);
-        Log.v("QT","User stored");
     }
 
 }
