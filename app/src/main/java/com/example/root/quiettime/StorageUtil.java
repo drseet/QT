@@ -15,7 +15,7 @@ import java.io.ObjectOutputStream;
 contains all the storage methods
 each user stored as an object in a file that is named after the username
 */
-class StorageUtil extends AppCompatActivity {
+class StorageUtil extends AppCompatActivity implements java.io.Serializable{
 
     File file;
 

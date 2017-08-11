@@ -31,20 +31,25 @@ class Main extends User{
 
     protected boolean credsMatch(String username, String password) {
         User user;
-
-        //NOTE: MUST HASH BEFORE COMPARISON
-
+        hash(password);
         user = getUser(username);
+
         if(user == null)
             return false;
         else
-            if(user.pw == password)
+            if(user.pw.equals(password))
                 return true;
         return false;
     }
 
+    //add updateUser method
+
     protected void createUser(String username, String password) {
-        //do dis
+        User user = new User();
+        user.name = username;
+        user.pw = password;
+        storeUser(user);
+        Log.v("QT","User stored");
     }
 
 }

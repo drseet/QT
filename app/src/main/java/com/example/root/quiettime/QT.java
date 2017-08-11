@@ -14,5 +14,5 @@ class QT extends StorageUtil {
     int qt_end = 0;
     int qt_avg = 0;
     int qt_sesh_num = 0;
-
+    int qt_total = 0;
 }
