@@ -64,7 +64,9 @@ class StorageUtil extends AppCompatActivity implements java.io.Serializable{
             return false;
     }
     protected void deleteUser(String username) {
-
+        File file = getApplicationContext().getFileStreamPath(username);
+        if(file.exists())
+            deleteFile(username);
     }
 
 }

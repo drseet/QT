@@ -42,9 +42,14 @@ class Main extends User{
         return false;
     }
 
-    //add updateUser method and delete user
-    protected void deleteUser(String username) {
-
+    protected void updateUser(User userUpdate) {
+        if(userUpdate == null){
+            Log.v("QT", "ERROR: Userfile not found!");
+        }
+        if(userFound(userUpdate.name))
+            deleteUser(userUpdate.name);
+        createUser(userUpdate.name, userUpdate.pw);
+        Log.v("QT", "Userfile successfully updated");
     }
 
     protected void createUser(String username, String password) {
