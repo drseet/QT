@@ -2,6 +2,7 @@ package com.example.root.quiettime;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class Register extends Main {
                 Toast.makeText(getApplicationContext(),
                         "Username taken! Try Again", Toast.LENGTH_LONG).show();
             else {
+                hash(password);
                 createUser(username, password);
                 Intent login = new Intent(Register.this, Login.class);
                 startActivity(login);

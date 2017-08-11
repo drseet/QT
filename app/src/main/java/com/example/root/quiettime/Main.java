@@ -1,5 +1,6 @@
 package com.example.root.quiettime;
 
+
 import android.util.Log;
 
 import java.security.MessageDigest;
@@ -9,18 +10,7 @@ class Main extends User{
 
     MessageDigest md;
 
-    protected boolean credsMatch(String username, String password) {
-        User user;
-
-        user = getUser(username);
-        if(user == null)
-            return false;
-        else
-            if(user.pw == password)
-                return true;
-        return false;
-    }
-    private String hash(String input) {
+    protected String hash(String input) {
 
         try{
             md = MessageDigest.getInstance("SHA-256");
@@ -39,8 +29,22 @@ class Main extends User{
         return null;
     }
 
+    protected boolean credsMatch(String username, String password) {
+        User user;
+
+        //NOTE: MUST HASH BEFORE COMPARISON
+
+        user = getUser(username);
+        if(user == null)
+            return false;
+        else
+            if(user.pw == password)
+                return true;
+        return false;
+    }
+
     protected void createUser(String username, String password) {
-        //hash(pass)
+        //do dis
     }
 
 }
