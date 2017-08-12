@@ -36,9 +36,9 @@ public class configTime extends Main {
     protected boolean threeMinWarn(int endMin){
         currentMin = Calendar.MINUTE;
 
-        if(currentMin < endMin)
+        if(currentMin < (endMin - 3))
             return threeMinWarn(endMin);
-        if(currentMin >= endMin)
+        if(currentMin >= endMin - 3)
             return true;
         return threeMinWarn(endMin);
     }

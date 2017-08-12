@@ -1,6 +1,9 @@
 package com.example.root.quiettime;
 
 
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.util.Log;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -64,6 +67,17 @@ class Main extends User{
         storeUser(user);
     }
 
-    //storeQTdata
+    public void alert() {
+        try {
+            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+            r.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    //storeQTdata w/ updateUser
+    //fetch qt data and updateUser
 
 }

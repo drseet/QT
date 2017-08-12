@@ -6,4 +6,20 @@
     android:layout_height="match_parent"
     tools:context="com.example.root.quiettime.Warn">
 
+    <TextView
+        android:id="@+id/warn_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Three Minute Warning"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        tools:layout_editor_absoluteX="38dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <TextView
+        android:id="@+id/grade_tool_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instructors: Please remember to use the grading tool"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="100dp" />
 </android.support.constraint.ConstraintLayout>
