@@ -27,10 +27,9 @@ public class configTime extends Main {
     protected boolean sameHour (int endHour) {
         currentHour = Calendar.HOUR_OF_DAY;
 
-        if(currentHour < endHour)
-            return sameHour(endHour);
-
-        return true;
+        if(currentHour >= endHour)
+            return true;
+        return sameHour(endHour);
     }
 
     protected boolean threeMinWarn(int endMin){

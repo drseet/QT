@@ -19,7 +19,6 @@ public class SplashScreen extends configTime {
         chron.start();
 
         if(warnTime()){
-
             Intent warn = new Intent(SplashScreen.this, Warn.class);
             startActivity(warn);
         }
@@ -27,8 +26,8 @@ public class SplashScreen extends configTime {
     }
     //record times
     protected boolean warnTime() {
-        if(sameHour(tp.getHour()))
-            if(threeMinWarn(tp.getMinute()))
+        if(sameHour(tp.getCurrentHour()))
+            if(threeMinWarn(tp.getCurrentMinute()))
                 return true;
         return false;
     }
